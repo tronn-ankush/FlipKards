@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta charset="UTF-8" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" async></script>
+    <title>ERR404</title>
+  </head>
+  <body>
+    <h1 class="game-id">Flip-n-Win</h1>
+<!--     
+    <div class="overlay-txt visible">
+      🖱️ To Start</div> -->
+
+      <div class="preview-txt visible">
+        <div id="hints">
+          <button onclick="pview()">
+            <span class="text">🖱️ START</span>
+          </button>
+        </div>
+        <div class="instruct">
+          <h3>How To Play:</h3>
+          <ul class="items">
+            <li>There are 6 pairs of cards on the deck shuffled randomly. 
+              Match all the cards to win the game.
+              <p>
+              <div class="smol">
+                <img src="Resource/primg.png" alt="">
+              </div>
+            </p>
+            </li>
+            <li><p>Remember to complete the game with minimum rolls before the timer runs out!!!</p></li>
+          </ul>
+        </div>
+      </div>
+
+    <div id="game-ovr-txt" class="overlay-txt">
+      GAME OVER👎💀
+      <span class="restart-overlay">🖱️ to Restart</span>
+    </div>
+    <div id="win-ovr-txt" class="overlay-txt">
+      🎉WINNER!!!🎉
+      <span class="restart-overlay">🖱️ to Restart</span>
+    </div>
+    <div class="app-background">
+      <img src="Resource/download.jfif" alt="">
+    </div>
+
+
+
+
+
+    <!-- <video autoplay muted loop id="Vid"> -->
+      <!-- <div id="bg"> 
+        <img src="Resource/download.jfif" alt="">
+      </div> -->
+       
+      <!-- <source src="Resource/tryout.webm"video/webm">
+    </video> -->
+    <div class="game-package">
+      <div class="game-var">
+        <div class="game-var-info">
+          Time Left: <span id="time-countdown" class="warn">30</span>
+        </div>
+        <div class="game-var-info">
+          Rolls: <span id="flips-counter">0</span>
+        </div>
+      </div>
+      <div class="token ">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/Captain.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/Captain.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/Hawkeye.png" alt="" />
+        </div>
+      </div>
+      <div class="token ">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/Hawkeye.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/antman.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/antman.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/ironman.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/ironman.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/spidy.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/spidy.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/black_panther.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/black_panther.png" alt="" />
+        </div>
+      </div>
+      <!-- <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/thanos.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/thanos.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/strange.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/strange.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/thor.png" alt="" />
+        </div>
+      </div>
+      <div class="token">
+        <div class="token-back face">
+          <img class="bface bface-tright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-tleft" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bright" src="Resource/floral2.png" alt="" />
+          <img class="bface bface-bleft" src="Resource/floral2.png" alt="" />
+          <img class="centerITM" src="Resource/NEW.png" alt="" />
+        </div>
+        <div class="token-front face">
+          <img
+            class="fface bface-tright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-tleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bright"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img
+            class="fface bface-bleft"
+            src="Resource/cborder-removebg-preview.png"
+            alt=""
+          />
+          <img class="card-icon" src="Resource/thor.png" alt="" />
+        </div> -->
+      </div>
+    </div>
+  </body>
+</html>
